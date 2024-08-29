@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Makanan</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="menu-container">
+        <h1>Pilih Menu Makanan</h1>
+        <form id="menuForm">
+            <div class="menu-item">
+                <input type="checkbox" id="menu1" name="menu" value="50000" onchange="calculateTotal()">
+                <label for="menu1">Nasi Goreng - Rp 50,000</label>
+            </div>
+            <div class="menu-item">
+                <input type="checkbox" id="menu2" name="menu" value="40000" onchange="calculateTotal()">
+                <label for="menu2">Mie Goreng - Rp 40,000</label>
+            </div>
+            <div class="menu-item">
+                <input type="checkbox" id="menu3" name="menu" value="60000" onchange="calculateTotal()">
+                <label for="menu3">Ayam Bakar - Rp 60,000</label>
+            </div>
+            <div class="menu-item">
+                <input type="checkbox" id="menu4" name="menu" value="30000" onchange="calculateTotal()">
+                <label for="menu4">Es Teh Manis - Rp 30,000</label>
+            </div>
+            <div class="total-container">
+                <h2>Total: Rp <span id="totalPrice">0</span></h2>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
