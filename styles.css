@@ -14,15 +14,20 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    margin: 20px;
 }
 
 h1 {
     text-align: center;
     color: #333;
+    font-size: 1.5em;
 }
 
 .menu-item {
     margin: 15px 0;
+    font-size: 1em;
 }
 
 .menu-item input {
@@ -36,4 +41,39 @@ h1 {
 
 .total-container h2 {
     color: #d9534f;
+    font-size: 1.2em;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.3em;
+    }
+
+    .menu-item {
+        font-size: 0.9em;
+    }
+
+    .total-container h2 {
+        font-size: 1em;
+    }
+}
+
+/* Responsif untuk layar besar */
+@media (min-width: 768px) {
+    .menu-container {
+        max-width: 600px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .menu-item {
+        font-size: 1.2em;
+    }
+
+    .total-container h2 {
+        font-size: 1.5em;
+    }
 }
