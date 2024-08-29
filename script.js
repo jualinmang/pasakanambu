@@ -4,8 +4,11 @@ function calculateTotal() {
     let orders = [];
 
     checkboxes.forEach((checkbox) => {
-        total += parseInt(checkbox.value);
-        orders.push(checkbox.getAttribute('data-name'));
+        const qtyInput = document.getElementById(`qty${checkbox.id.replace('menu', '')}`);
+        const qty = parseInt(qtyInput.value);
+        const itemPrice = parseInt(checkbox.value) * qty;
+        total += itemPrice;
+        orders.push(`${checkbox.getAttribute('data-name')} x${qty} - Rp ${itemPrice.toLocaleString()}`);
     });
 
     document.getElementById('totalPrice').innerText = total.toLocaleString();
@@ -22,5 +25,13 @@ function calculateTotal() {
     // Update WhatsApp link
     const whatsappLink = document.getElementById('whatsappLink');
     const message = `Saya ingin memesan:\n${orders.join('\n')}\n\nTotal: Rp ${total.toLocaleString()}`;
-    whatsappLink.href = `https://wa.me/628111269691?text=${encodeURIComponent(message)}`;
+    whatsappLink.href = `https://wa.me/+628111269691?text=${encodeURIComponent(message)}`;
 }
+
+document.querySelectorAll('input[name="menu"]').forEach((checkbox) => {
+    checkbox.addEventListener('change', function () {
+        const qtyInput = document.getElementById(`qty${this.id.replace('menu', '')}`);
+        qtyInput.disabled = !this.checked;
+        calculateTotal();
+    });
+});

@@ -27,18 +27,22 @@
             <div class="menu-item">
                 <input type="checkbox" id="menu1" name="menu" value="50000" data-name="Nasi Goreng" onchange="calculateTotal()">
                 <label for="menu1">Nasi Goreng - Rp 50,000</label>
+                <input type="number" id="qty1" name="qty" value="1" min="1" onchange="calculateTotal()" disabled>
             </div>
             <div class="menu-item">
                 <input type="checkbox" id="menu2" name="menu" value="40000" data-name="Mie Goreng" onchange="calculateTotal()">
                 <label for="menu2">Mie Goreng - Rp 40,000</label>
+                <input type="number" id="qty2" name="qty" value="1" min="1" onchange="calculateTotal()" disabled>
             </div>
             <div class="menu-item">
                 <input type="checkbox" id="menu3" name="menu" value="60000" data-name="Ayam Bakar" onchange="calculateTotal()">
                 <label for="menu3">Ayam Bakar - Rp 60,000</label>
+                <input type="number" id="qty3" name="qty" value="1" min="1" onchange="calculateTotal()" disabled>
             </div>
             <div class="menu-item">
                 <input type="checkbox" id="menu4" name="menu" value="30000" data-name="Es Teh Manis" onchange="calculateTotal()">
                 <label for="menu4">Es Teh Manis - Rp 30,000</label>
+                <input type="number" id="qty4" name="qty" value="1" min="1" onchange="calculateTotal()" disabled>
             </div>
             <div class="total-container">
                 <h2>Total: Rp <span id="totalPrice">0</span></h2>

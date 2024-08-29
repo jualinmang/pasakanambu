@@ -28,10 +28,14 @@ h1 {
 .menu-item {
     margin: 15px 0;
     font-size: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.menu-item input {
-    margin-right: 10px;
+.menu-item input[type="number"] {
+    width: 60px;
+    padding: 5px;
 }
 
 .total-container {
