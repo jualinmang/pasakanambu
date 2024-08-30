@@ -1,3 +1,31 @@
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('./data/menu.json')
+        .then(response => response.json())
+        .then(data => {
+            renderMenu(data);
+        })
+        .catch(error => console.error('Error loading menu:', error));
+});
+
+function renderMenu(menuItems) {
+    const menuGrid = document.getElementById('menuGrid');
+    menuItems.forEach(item => {
+        const menuItem = document.createElement('div');
+        menuItem.className = 'menu-item';
+        menuItem.innerHTML = `
+            <h3>${item.name}</h3>
+            <img src="./menu/${item.image}" alt="${item.name}" class="menu-image">
+            <div class="quantity-controls">
+                <button type="button" class="qty-btn" onclick="changeQuantity('qty${item.id}', ${item.price}, -1)">-</button>
+                <input type="number" id="qty${item.id}" name="qty${item.id}" value="0" min="0" data-price="${item.price}" data-name="${item.name}" onchange="calculateTotal()">
+                <button type="button" class="qty-btn" onclick="changeQuantity('qty${item.id}', ${item.price}, 1)">+</button>
+            </div>
+            <p>Rp ${item.price.toLocaleString()}</p>
+        `;
+        menuGrid.appendChild(menuItem);
+    });
+}
+
 function changeQuantity(id, price, delta) {
     var qtyInput = document.getElementById(id);
     var currentValue = parseInt(qtyInput.value);
@@ -13,8 +41,7 @@ function calculateTotal() {
     const inputs = document.querySelectorAll('input[type="number"]');
     let total = 0;
     let orders = [];
-    const rek = "Pembayaran akan dilakukan dengan transfer ke rekening:\nBCA 7750878347\nA.N. Nedi Sopian";
-
+    const rek = "Pembayaran akan dilakukan dengan transfer ke rekening\nBCA 7750878347\nNedi Sopian";
 
     inputs.forEach(input => {
         const quantity = parseInt(input.value);
@@ -41,5 +68,5 @@ function calculateTotal() {
     // Update WhatsApp link
     const whatsappLink = document.getElementById('whatsappLink');
     const message = `Saya ingin memesan:\n${orders.join('\n')}\n\nTotal: Rp ${total.toLocaleString()}\n\n${rek}`;
-    whatsappLink.href = `https://wa.me/628111269691?text=${encodeURIComponent(message)}`;
+    whatsappLink.href = `https://wa.me/+628111269691?text=${encodeURIComponent(message)}`;
 }

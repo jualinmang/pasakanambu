@@ -1,0 +1,14 @@
+[
+    {
+        "id": "1",
+        "name": "Jengkol Rendang / 150 GR",
+        "price": 20000,
+        "image": "jengkolrendang.png"
+    },
+    {
+        "id": "2",
+        "name": "Babat Serundeng / PC",
+        "price": 5000,
+        "image": "babatserundeng.png"
+    }
+]
