@@ -17,10 +17,11 @@ function calculateTotal() {
     inputs.forEach(input => {
         const quantity = parseInt(input.value);
         const price = parseInt(input.getAttribute('data-price'));
+        const name = input.getAttribute('data-name');
 
         if (quantity > 0) {
             total += quantity * price;
-            orders.push(`${input.name.replace('qty', '')} x${quantity} - Rp ${(quantity * price).toLocaleString()}`);
+            orders.push(`${name} x${quantity} - Rp ${(quantity * price).toLocaleString()}`);
         }
     });
 

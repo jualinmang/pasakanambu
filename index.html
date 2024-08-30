@@ -39,7 +39,7 @@
                 <img src="./menu/jengkolrendang.png" alt="Jengkol Rendang" class="menu-image">
                 <div class="quantity-controls">
                     <button type="button" class="qty-btn" onclick="changeQuantity('qty1', 20000, -1)">-</button>
-                    <input type="number" id="qty1" name="qty1" value="0" min="0" data-price="20000" onchange="calculateTotal()">
+                    <input type="number" id="qty1" name="qty1" value="0" min="0" data-price="20000" data-name="Jengkol Rendang" onchange="calculateTotal()">
                     <button type="button" class="qty-btn" onclick="changeQuantity('qty1', 20000, 1)">+</button>
                 </div>
                 <p>Rp 20,000</p>
@@ -49,13 +49,14 @@
                 <img src="./menu/babatserundeng.png" alt="Babat Serundeng" class="menu-image">
                 <div class="quantity-controls">
                     <button type="button" class="qty-btn" onclick="changeQuantity('qty2', 5000, -1)">-</button>
-                    <input type="number" id="qty2" name="qty2" value="0" min="0" data-price="5000" onchange="calculateTotal()">
+                    <input type="number" id="qty2" name="qty2" value="0" min="0" data-price="5000" data-name="Babat Serundeng" onchange="calculateTotal()">
                     <button type="button" class="qty-btn" onclick="changeQuantity('qty2', 5000, 1)">+</button>
                 </div>
                 <p>Rp 5,000</p>
             </div>
             <!-- Tambahkan item menu lainnya di sini dengan format yang sama -->
         </div>
+        
         <div class="total-container">
             <h2>Total: Rp <span id="totalPrice">0</span></h2>
             <h3>Pesanan Anda:</h3>
