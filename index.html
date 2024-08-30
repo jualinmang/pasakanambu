@@ -29,7 +29,7 @@
             <img src="./Asset 2.png" alt="Pasakan Ambu Logo" class="logo">
             <h1>Pasakan Ambu</h1>
         </div>
-        <img src="./banner.jpg" alt="Banner" class="banner-image">
+        <img src="./banner.png" alt="Banner" class="banner-image">
     </header>
     <main class="main-container">
         <h2>Form Pemesanan</h2>
@@ -38,9 +38,9 @@
                 <h3>Jengkol Rendang / 150 GR</h3>
                 <img src="./menu/jengkolrendang.png" alt="Jengkol Rendang" class="menu-image">
                 <div class="quantity-controls">
-                    <button type="button" class="qty-btn" onclick="changeQuantity('qty1', -1)">-</button>
-                    <input type="number" id="qty1" name="qty1" value="0" min="0">
-                    <button type="button" class="qty-btn" onclick="changeQuantity('qty1', 1)">+</button>
+                    <button type="button" class="qty-btn" onclick="changeQuantity('qty1', 20000, -1)">-</button>
+                    <input type="number" id="qty1" name="qty1" value="0" min="0" data-price="20000" onchange="calculateTotal()">
+                    <button type="button" class="qty-btn" onclick="changeQuantity('qty1', 20000, 1)">+</button>
                 </div>
                 <p>Rp 20,000</p>
             </div>
@@ -48,13 +48,19 @@
                 <h3>Babat Serundeng / PC</h3>
                 <img src="./menu/babatserundeng.png" alt="Babat Serundeng" class="menu-image">
                 <div class="quantity-controls">
-                    <button type="button" class="qty-btn" onclick="changeQuantity('qty2', -1)">-</button>
-                    <input type="number" id="qty2" name="qty2" value="0" min="0">
-                    <button type="button" class="qty-btn" onclick="changeQuantity('qty2', 1)">+</button>
+                    <button type="button" class="qty-btn" onclick="changeQuantity('qty2', 5000, -1)">-</button>
+                    <input type="number" id="qty2" name="qty2" value="0" min="0" data-price="5000" onchange="calculateTotal()">
+                    <button type="button" class="qty-btn" onclick="changeQuantity('qty2', 5000, 1)">+</button>
                 </div>
                 <p>Rp 5,000</p>
             </div>
             <!-- Tambahkan item menu lainnya di sini dengan format yang sama -->
+        </div>
+        <div class="total-container">
+            <h2>Total: Rp <span id="totalPrice">0</span></h2>
+            <h3>Pesanan Anda:</h3>
+            <ul id="orderList"></ul>
+            <a id="whatsappLink" href="#" class="whatsapp-button" target="_blank">Kirim Pesanan via WhatsApp</a>
         </div>
     </main>
     <script src="script.js"></script>

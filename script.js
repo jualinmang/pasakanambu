@@ -1,14 +1,27 @@
+function changeQuantity(id, price, delta) {
+    var qtyInput = document.getElementById(id);
+    var currentValue = parseInt(qtyInput.value);
+    if (!isNaN(currentValue)) {
+        qtyInput.value = Math.max(0, currentValue + delta); // Tidak boleh kurang dari 0
+    } else {
+        qtyInput.value = 0;
+    }
+    calculateTotal(); // Perbarui total setiap kali kuantitas berubah
+}
+
 function calculateTotal() {
-    const checkboxes = document.querySelectorAll('input[name="menu"]:checked');
+    const inputs = document.querySelectorAll('input[type="number"]');
     let total = 0;
     let orders = [];
 
-    checkboxes.forEach((checkbox) => {
-        const qtyInput = document.getElementById(`qty${checkbox.id.replace('menu', '')}`);
-        const qty = parseInt(qtyInput.value);
-        const itemPrice = parseInt(checkbox.value) * qty;
-        total += itemPrice;
-        orders.push(`${checkbox.getAttribute('data-name')} x${qty} - Rp ${itemPrice.toLocaleString()}`);
+    inputs.forEach(input => {
+        const quantity = parseInt(input.value);
+        const price = parseInt(input.getAttribute('data-price'));
+
+        if (quantity > 0) {
+            total += quantity * price;
+            orders.push(`${input.name.replace('qty', '')} x${quantity} - Rp ${(quantity * price).toLocaleString()}`);
+        }
     });
 
     document.getElementById('totalPrice').innerText = total.toLocaleString();
@@ -16,7 +29,7 @@ function calculateTotal() {
     // Update the order list
     const orderList = document.getElementById('orderList');
     orderList.innerHTML = '';
-    orders.forEach((order) => {
+    orders.forEach(order => {
         const li = document.createElement('li');
         li.innerText = order;
         orderList.appendChild(li);
@@ -26,23 +39,4 @@ function calculateTotal() {
     const whatsappLink = document.getElementById('whatsappLink');
     const message = `Saya ingin memesan:\n${orders.join('\n')}\n\nTotal: Rp ${total.toLocaleString()}`;
     whatsappLink.href = `https://wa.me/+628111269691?text=${encodeURIComponent(message)}`;
-}
-
-document.querySelectorAll('input[name="menu"]').forEach((checkbox) => {
-    checkbox.addEventListener('change', function () {
-        const qtyInput = document.getElementById(`qty${this.id.replace('menu', '')}`);
-        qtyInput.disabled = !this.checked;
-        calculateTotal();
-    });
-});
-
-
-function changeQuantity(id, delta) {
-    var qtyInput = document.getElementById(id);
-    var currentValue = parseInt(qtyInput.value);
-    if (!isNaN(currentValue)) {
-        qtyInput.value = Math.max(0, currentValue + delta); // Tidak boleh kurang dari 0
-    } else {
-        qtyInput.value = 0;
-    }
 }
