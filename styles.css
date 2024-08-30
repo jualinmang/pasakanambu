@@ -59,11 +59,20 @@ h2 {
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Menjamin item mengisi seluruh ruang */
 }
 
 .menu-item h3 {
     margin-bottom: 10px;
     color: #333;
+    min-height: 50px; /* Atur tinggi minimum untuk heading agar rata */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .menu-image {
@@ -71,6 +80,8 @@ h2 {
     height: auto;
     border-radius: 10px;
     margin-bottom: 10px;
+    flex-grow: 1; /* Membuat gambar mengisi ruang yang tersisa */
+    object-fit: cover; /* Memastikan gambar tetap proporsional */
 }
 
 .quantity-controls {
