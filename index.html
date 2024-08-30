@@ -43,6 +43,19 @@
             <a id="whatsappLink" href="#" class="whatsapp-button" target="_blank">Kirim Pesanan via WhatsApp</a>
         </div>
     </main>
+
+    <!-- Modal untuk input nomor WhatsApp dan alamat -->
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <h2>Masukkan Informasi Anda</h2>
+            <label for="whatsapp">Nomor WhatsApp:</label>
+            <input type="text" id="whatsapp" placeholder="Masukkan nomor WhatsApp">
+            <label for="address">Alamat:</label>
+            <input type="text" id="address" placeholder="Masukkan alamat Anda">
+            <button onclick="saveUserInfo()">Simpan</button>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>

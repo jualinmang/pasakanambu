@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    checkCookies();
     fetch('./data/menu.json')
         .then(response => response.json())
         .then(data => {
@@ -6,6 +7,53 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Error loading menu:', error));
 });
+
+function checkCookies() {
+    const userWhatsapp = getCookie("whatsapp");
+    const userAddress = getCookie("address");
+
+    if (!userWhatsapp || !userAddress) {
+        document.getElementById('userModal').style.display = 'flex';
+    } else {
+        document.getElementById('userModal').style.display = 'none';
+    }
+}
+
+function saveUserInfo() {
+    const whatsapp = document.getElementById('whatsapp').value;
+    const address = document.getElementById('address').value;
+
+    if (whatsapp && address) {
+        setCookie("whatsapp", whatsapp, 365);
+        setCookie("address", address, 365);
+        document.getElementById('userModal').style.display = 'none';
+    } else {
+        alert("Silakan masukkan semua informasi.");
+    }
+}
+
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
 
 function renderMenu(menuItems) {
     const menuGrid = document.getElementById('menuGrid');
@@ -42,6 +90,8 @@ function calculateTotal() {
     let total = 0;
     let orders = [];
     const rek = "Pembayaran akan dilakukan dengan transfer ke rekening\nBCA 7750878347\nNedi Sopian";
+    const userWhatsapp = getCookie("whatsapp");
+    const userAddress = getCookie("address");
 
     inputs.forEach(input => {
         const quantity = parseInt(input.value);
@@ -67,6 +117,6 @@ function calculateTotal() {
 
     // Update WhatsApp link
     const whatsappLink = document.getElementById('whatsappLink');
-    const message = `Saya ingin memesan:\n${orders.join('\n')}\n\nTotal: Rp ${total.toLocaleString()}\n\n${rek}`;
-    whatsappLink.href = `https://wa.me/+628111269691?text=${encodeURIComponent(message)}`;
+    const message = `Saya ingin memesan:\n${orders.join('\n')}\n\nTotal: Rp ${total.toLocaleString()}\n\n${rek}\n\nNomor WhatsApp: ${userWhatsapp}\nAlamat: ${userAddress}`;
+    whatsappLink.href = `https://wa.me/628111269691?text=${encodeURIComponent(message)}`;
 }
