@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pasakan Ambu</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
     
+    <!-- Favicon -->
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+
     <!-- Meta Tags for Open Graph -->
     <meta property="og:title" content="Pasakan Ambu" />
     <meta property="og:description" content="Nikmati berbagai pilihan menu makanan lezat di Pasakan Ambu. Mulai dari Nasi Goreng, Mie Goreng, Ayam Bakar, hingga Es Teh Manis dengan harga terjangkau." />
@@ -30,24 +32,36 @@
         <h1>Pilih Menu Makanan</h1>
         <form id="menuForm">
             <div class="menu-item">
-                <input type="checkbox" id="menu1" name="menu" value="50000" data-name="Nasi Goreng" onchange="calculateTotal()">
-                <label for="menu1">Nasi Goreng - Rp 50,000</label>
-                <input type="number" id="qty1" name="qty" value="1" min="1" onchange="calculateTotal()" disabled>
+                <img src="./nasi_goreng.jpg" alt="Nasi Goreng" class="menu-image">
+                <div class="menu-details">
+                    <input type="checkbox" id="menu1" name="menu" value="50000" data-name="Nasi Goreng" onchange="calculateTotal()">
+                    <label for="menu1">Nasi Goreng - Rp 50,000</label>
+                    <input type="number" id="qty1" name="qty" value="1" min="1" onchange="calculateTotal()" disabled>
+                </div>
             </div>
             <div class="menu-item">
-                <input type="checkbox" id="menu2" name="menu" value="40000" data-name="Mie Goreng" onchange="calculateTotal()">
-                <label for="menu2">Mie Goreng - Rp 40,000</label>
-                <input type="number" id="qty2" name="qty" value="1" min="1" onchange="calculateTotal()" disabled>
+                <img src="./mie_goreng.jpg" alt="Mie Goreng" class="menu-image">
+                <div class="menu-details">
+                    <input type="checkbox" id="menu2" name="menu" value="40000" data-name="Mie Goreng" onchange="calculateTotal()">
+                    <label for="menu2">Mie Goreng - Rp 40,000</label>
+                    <input type="number" id="qty2" name="qty" value="1" min="1" onchange="calculateTotal()" disabled>
+                </div>
             </div>
             <div class="menu-item">
-                <input type="checkbox" id="menu3" name="menu" value="60000" data-name="Ayam Bakar" onchange="calculateTotal()">
-                <label for="menu3">Ayam Bakar - Rp 60,000</label>
-                <input type="number" id="qty3" name="qty" value="1" min="1" onchange="calculateTotal()" disabled>
+                <img src="./ayam_bakar.jpg" alt="Ayam Bakar" class="menu-image">
+                <div class="menu-details">
+                    <input type="checkbox" id="menu3" name="menu" value="60000" data-name="Ayam Bakar" onchange="calculateTotal()">
+                    <label for="menu3">Ayam Bakar - Rp 60,000</label>
+                    <input type="number" id="qty3" name="qty" value="1" min="1" onchange="calculateTotal()" disabled>
+                </div>
             </div>
             <div class="menu-item">
-                <input type="checkbox" id="menu4" name="menu" value="30000" data-name="Es Teh Manis" onchange="calculateTotal()">
-                <label for="menu4">Es Teh Manis - Rp 30,000</label>
-                <input type="number" id="qty4" name="qty" value="1" min="1" onchange="calculateTotal()" disabled>
+                <img src="./es_teh_manis.jpg" alt="Es Teh Manis" class="menu-image">
+                <div class="menu-details">
+                    <input type="checkbox" id="menu4" name="menu" value="30000" data-name="Es Teh Manis" onchange="calculateTotal()">
+                    <label for="menu4">Es Teh Manis - Rp 30,000</label>
+                    <input type="number" id="qty4" name="qty" value="1" min="1" onchange="calculateTotal()" disabled>
+                </div>
             </div>
             <div class="total-container">
                 <h2>Total: Rp <span id="totalPrice">0</span></h2>
