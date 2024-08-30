@@ -84,9 +84,13 @@ h2 {
 .qty-btn {
     background-color: #ddd;
     border: none;
-    padding: 5px 10px;
+    padding: 10px 15px;
     cursor: pointer;
     font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px; /* Tinggi tombol */
 }
 
 .qty-btn:hover {
@@ -94,12 +98,20 @@ h2 {
 }
 
 .quantity-controls input[type="number"] {
-    width: 50px;
+    width: 60px;
     text-align: center;
     font-size: 16px;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin: 0 5px;
+    height: 40px; /* Sesuaikan tinggi input dengan tombol */
+    -moz-appearance: textfield; /* Menghilangkan spinner di Firefox */
+}
+
+.quantity-controls input[type="number"]::-webkit-outer-spin-button,
+.quantity-controls input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; /* Menghilangkan spinner di Chrome */
 }
 
 .total-container {
