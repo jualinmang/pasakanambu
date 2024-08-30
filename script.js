@@ -13,6 +13,8 @@ function calculateTotal() {
     const inputs = document.querySelectorAll('input[type="number"]');
     let total = 0;
     let orders = [];
+    const rek = "Pembayaran akan dilakukan dengan transfer ke rekening:\nBCA 7750878347\nA.N. Nedi Sopian";
+
 
     inputs.forEach(input => {
         const quantity = parseInt(input.value);
@@ -38,6 +40,6 @@ function calculateTotal() {
 
     // Update WhatsApp link
     const whatsappLink = document.getElementById('whatsappLink');
-    const message = `Saya ingin memesan:\n${orders.join('\n')}\n\nTotal: Rp ${total.toLocaleString()}`;
-    whatsappLink.href = `https://wa.me/+628111269691?text=${encodeURIComponent(message)}`;
+    const message = `Saya ingin memesan:\n${orders.join('\n')}\n\nTotal: Rp ${total.toLocaleString()}\n\n${rek}`;
+    whatsappLink.href = `https://wa.me/628111269691?text=${encodeURIComponent(message)}`;
 }
