@@ -163,7 +163,6 @@ h2 {
     background-color: #20b358;
 }
 
-
 .modal {
     display: none; /* Modal tersembunyi secara default */
     position: fixed;
@@ -181,14 +180,17 @@ h2 {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    width: 300px;
+    width: 90%; /* Mengatur lebar modal agar responsif */
+    max-width: 400px; /* Membatasi lebar maksimum modal */
     text-align: center;
 }
 
 .modal-content input[type="text"] {
-    width: 100%;
+    width: 100%; /* Lebar penuh untuk input */
     padding: 10px;
     margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #ddd;
+    box-sizing: border-box; /* Pastikan padding tidak melebihi lebar */
 }
+
