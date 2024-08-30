@@ -35,3 +35,14 @@ document.querySelectorAll('input[name="menu"]').forEach((checkbox) => {
         calculateTotal();
     });
 });
+
+
+function changeQuantity(id, delta) {
+    var qtyInput = document.getElementById(id);
+    var currentValue = parseInt(qtyInput.value);
+    if (!isNaN(currentValue)) {
+        qtyInput.value = Math.max(0, currentValue + delta); // Tidak boleh kurang dari 0
+    } else {
+        qtyInput.value = 0;
+    }
+}
