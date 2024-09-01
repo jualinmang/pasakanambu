@@ -67,7 +67,8 @@ h2 {
     flex-direction: column;
     justify-content: space-between;
     height: 100%; /* Menjamin item mengisi seluruh ruang */
-    margin-bottom: 20px; /* Menambahkan margin bawah antar item menu */
+    margin-top: 10px; /* Menambahkan margin atas antar item menu */
+    margin-bottom: 30px; /* Menambahkan margin bawah antar item menu */
 }
 
 .menu-item h3 {
