@@ -1,3 +1,6 @@
+import { postJSON } from 'https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.4/api.js';  // Sesuaikan path sesuai dengan lokasi file Anda
+
+
 document.addEventListener('DOMContentLoaded', function() {
     checkCookies();
     fetch('./data/menu.json')
@@ -126,3 +129,50 @@ function calculateTotal() {
     const message = `Saya ingin memesan:\n${orders.join('\n')}\n\nTotal: Rp ${total.toLocaleString()}\n\n${rek}\n\nNama: ${userName}\nNomor WhatsApp: ${userWhatsapp}\nAlamat: ${userAddress}`;
     whatsappLink.href = `https://wa.me/628111269691?text=${encodeURIComponent(message)}`;
 }
+
+
+document.getElementById('whatsappLink').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    const rek = "Pembayaran akan dilakukan dengan transfer ke rekening\nBCA 7750878347\nNedi Sopian";
+    const userName = getCookie("name");
+    const userWhatsapp = getCookie("whatsapp");
+    const userAddress = getCookie("address");
+    
+    const inputs = document.querySelectorAll('input[type="number"]');
+    let orders = [];
+    let total = 0;
+
+    inputs.forEach(input => {
+        const quantity = parseInt(input.value);
+        const price = parseInt(input.getAttribute('data-price'));
+        const name = input.getAttribute('data-name');
+
+        if (quantity > 0) {
+            total += quantity * price;
+            orders.push({ name, quantity, price: quantity * price });
+        }
+    });
+
+    const message = `Saya ingin memesan:\n${orders.map(order => `${order.name} x${order.quantity} - Rp ${order.price.toLocaleString()}`).join('\n')}\n\nTotal: Rp ${total.toLocaleString()}\n\n${rek}\n\nNama: ${userName}\nNomor WhatsApp: ${userWhatsapp}\nAlamat: ${userAddress}`;
+    const whatsappUrl = `https://wa.me/628111269691?text=${encodeURIComponent(message)}`;
+
+    // Redirect to WhatsApp
+    window.open(whatsappUrl, '_blank');
+
+    // POST request to API
+    const postData = {
+        orders: orders,
+        total: total,
+        user: {
+            name: userName,
+            whatsapp: userWhatsapp,
+            address: userAddress
+        },
+        payment: rek
+    };
+
+    postJSON('https://your-api-endpoint.com/orders', 'Authorization', 'Bearer your_token_here', postData, function(response) {
+        console.log('API Response:', response);
+    });
+});
