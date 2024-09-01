@@ -135,6 +135,7 @@ function calculateTotal() {
 document.getElementById('whatsappLink').addEventListener('click', function(event) {
     event.preventDefault();
 
+    const paymentMethod = document.getElementById('paymentMethod').value; // Ambil metode pembayaran yang dipilih
     const rek = "Pembayaran akan dilakukan dengan transfer ke rekening\nBCA 7750878347\nNedi Sopian";
     const userName = getCookie("name");
     const userWhatsapp = getCookie("whatsapp");
@@ -155,7 +156,9 @@ document.getElementById('whatsappLink').addEventListener('click', function(event
         }
     });
 
-    const message = `Saya ingin memesan:\n${orders.map(order => `${order.name} x${order.quantity} - Rp ${order.price.toLocaleString()}`).join('\n')}\n\nTotal: Rp ${total.toLocaleString()}\n\n${rek}\n\nNama: ${userName}\nNomor WhatsApp: ${userWhatsapp}\nAlamat: ${userAddress}`;
+    let paymentInfo = paymentMethod === "Transfer" ? rek : "Pembayaran akan dilakukan dengan metode COD.";
+    
+    const message = `Saya ingin memesan:\n${orders.map(order => `${order.name} x${order.quantity} - Rp ${order.price.toLocaleString()}`).join('\n')}\n\nTotal: Rp ${total.toLocaleString()}\n\n${paymentInfo}\n\nNama: ${userName}\nNomor WhatsApp: ${userWhatsapp}\nAlamat: ${userAddress}`;
     const whatsappUrl = `https://wa.me/628111269691?text=${encodeURIComponent(message)}`;
 
     // Redirect to WhatsApp
@@ -170,7 +173,7 @@ document.getElementById('whatsappLink').addEventListener('click', function(event
             whatsapp: userWhatsapp,
             address: userAddress
         },
-        payment: rek
+        payment: paymentInfo
     };
 
     postJSON('https://your-api-endpoint.com/orders', 'Authorization', 'Bearer your_token_here', postData, function(response) {
