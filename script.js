@@ -173,7 +173,8 @@ document.getElementById('whatsappLink').addEventListener('click', function(event
             whatsapp: userWhatsapp,
             address: userAddress
         },
-        payment: paymentInfo
+        payment: paymentInfo,
+        paymentMethod: paymentMethod // Tambahkan paymentMethod ke postData
     };
 
     postJSON('https://your-api-endpoint.com/orders', 'Authorization', 'Bearer your_token_here', postData, function(response) {
