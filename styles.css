@@ -52,21 +52,22 @@ h2 {
 
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px; /* Jarak antar elemen grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    row-gap: 50px; /* Jarak antara baris */
+    column-gap: 20px; /* Jarak antara kolom tetap */
 }
 
 .menu-item {
     background-color: #f9f9f9;
-    padding: 10px; /* Mengurangi padding agar lebih proporsional */
+    padding: 15px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 240px; /* Menurunkan sedikit tinggi minimum */
-    margin-bottom: 30px; /* Memberikan margin bawah antar item */
+    height: 100%;
+    margin-bottom: 0px; /* Tidak perlu margin bawah, karena row-gap sudah mengatur jarak antar baris */
 }
 
 .menu-item h3 {
