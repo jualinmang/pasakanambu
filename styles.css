@@ -30,8 +30,11 @@ body {
     max-width: 1200px;
     padding: 20px;
     background-color: #ffffff;
-    margin-top: 20px;
+    margin: 20px auto; /* Menggunakan margin auto untuk membuat elemen di tengah */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan untuk efek visual */
+    border-radius: 10px; /* Opsional: menambahkan border-radius untuk tampilan lebih lembut */
 }
+
 
 h2 {
     text-align: center;
