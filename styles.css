@@ -208,12 +208,11 @@ h2 {
 }
 
 .site-footer {
-    background-color: #f0f4ff;
-    padding: 20px 0;
+    padding: 10px 0;
     text-align: center;
     font-size: 14px;
     color: #333;
-    margin-top: 40px; /* Tambahkan margin top jika perlu */
+    margin-top: 40px;
 }
 
 .footer-content {
@@ -222,33 +221,39 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 5px; /* Mengurangi jarak antar elemen */
 }
 
 .footer-logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px; /* Mengurangi jarak antara logo dan teks */
 }
 
 .footer-logo-icon {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     background-color: #4caf50; /* Warna hijau untuk ikon */
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
+}
+
+.footer-content p {
+    margin: 0;
+    line-height: 1.4; /* Line-height yang lebih proporsional */
 }
 
 .footer-content a {
     color: #333;
     text-decoration: none;
     border-bottom: 1px solid #333;
+    font-size: 14px;
 }
 
 .footer-content a:hover {
