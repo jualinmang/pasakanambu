@@ -54,7 +54,6 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    margin-bottom: 20px; /* Menambahkan margin bawah untuk grid secara keseluruhan */
 }
 
 .menu-item {
@@ -67,8 +66,8 @@ h2 {
     flex-direction: column;
     justify-content: space-between;
     height: 100%; /* Menjamin item mengisi seluruh ruang */
-    margin-top: 10px; /* Menambahkan margin atas antar item menu */
-    margin-bottom: 30px; /* Menambahkan margin bawah antar item menu */
+    min-height: 250px; /* Menambahkan tinggi minimum untuk item menu */
+    margin-bottom: 20px; /* Mengatur margin bawah */
 }
 
 .menu-item h3 {
