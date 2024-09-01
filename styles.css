@@ -87,12 +87,23 @@ h2 {
     object-fit: cover; /* Memastikan gambar tetap proporsional */
 }
 
+.menu-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.price {
+    font-size: 16px;
+    color: #333;
+    margin-right: 10px;
+}
+
 .quantity-controls {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 .qty-btn {
