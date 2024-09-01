@@ -12,7 +12,7 @@
     <!-- Meta Tags for Open Graph -->
     <meta property="og:title" content="Pasakan Ambu" />
     <meta property="og:description" content="Nikmati berbagai pilihan menu makanan lezat di Pasakan Ambu. Mulai dari Jengkol Rendang, Babat Serundeng, dan masih banyak lagi!" />
-    <meta property="og:image" content="https://jual.in.my.id/pasakanambu/bg/gambar.jpg" />
+    <meta property="og:image" content="https://jual.in.my.id/pasakanambu/gambar.jpg" />
     <meta property="og:url" content="https://jual.in.my.id/pasakanambu" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Pasakan Ambu" />
@@ -21,14 +21,11 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Pasakan Ambu">
     <meta name="twitter:description" content="Nikmati berbagai pilihan menu makanan lezat di Pasakan Ambu. Mulai dari Jengkol Rendang, Babat Serundeng, dan masih banyak lagi!">
-    <meta name="twitter:image" content="https://jual.in.my.id/pasakanambu/bg/gambar.jpg">
+    <meta name="twitter:image" content="https://jual.in.my.id/pasakanambu/gambar.jpg">
 </head>
 <body>
     <header class="header">
-        <div class="logo-container">
-            <img src="./Asset 2.png" alt="Pasakan Ambu Logo" class="logo">
-            <h1>Pasakan Ambu</h1>
-        </div>
+        <h1>Pasakan Ambu</h1>
         <img src="./banner.jpg" alt="Banner" class="banner-image">
     </header>
     <main class="main-container">
@@ -44,10 +41,12 @@
         </div>
     </main>
 
-    <!-- Modal untuk input nomor WhatsApp dan alamat -->
+    <!-- Modal untuk input nama, nomor WhatsApp, dan alamat -->
     <div id="userModal" class="modal">
         <div class="modal-content">
             <h2>Masukkan Informasi Anda</h2>
+            <label for="name">Nama:</label>
+            <input type="text" id="name" placeholder="Masukkan nama Anda">
             <label for="whatsapp">Nomor WhatsApp:</label>
             <input type="text" id="whatsapp" placeholder="Masukkan nomor WhatsApp">
             <label for="address">Alamat:</label>
@@ -55,7 +54,7 @@
             <button onclick="saveUserInfo()">Simpan</button>
         </div>
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>

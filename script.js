@@ -9,10 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function checkCookies() {
+    const userName = getCookie("name");
     const userWhatsapp = getCookie("whatsapp");
     const userAddress = getCookie("address");
 
-    if (!userWhatsapp || !userAddress) {
+    if (!userName || !userWhatsapp || !userAddress) {
         document.getElementById('userModal').style.display = 'flex';
     } else {
         document.getElementById('userModal').style.display = 'none';
@@ -20,10 +21,12 @@ function checkCookies() {
 }
 
 function saveUserInfo() {
+    const name = document.getElementById('name').value;
     const whatsapp = document.getElementById('whatsapp').value;
     const address = document.getElementById('address').value;
 
-    if (whatsapp && address) {
+    if (name && whatsapp && address) {
+        setCookie("name", name, 365);
         setCookie("whatsapp", whatsapp, 365);
         setCookie("address", address, 365);
         document.getElementById('userModal').style.display = 'none';
@@ -90,6 +93,7 @@ function calculateTotal() {
     let total = 0;
     let orders = [];
     const rek = "Pembayaran akan dilakukan dengan transfer ke rekening\nBCA 7750878347\nNedi Sopian";
+    const userName = getCookie("name");
     const userWhatsapp = getCookie("whatsapp");
     const userAddress = getCookie("address");
 
@@ -117,6 +121,6 @@ function calculateTotal() {
 
     // Update WhatsApp link
     const whatsappLink = document.getElementById('whatsappLink');
-    const message = `Saya ingin memesan:\n${orders.join('\n')}\n\nTotal: Rp ${total.toLocaleString()}\n\n${rek}\n\nNomor WhatsApp: ${userWhatsapp}\nAlamat: ${userAddress}`;
+    const message = `Saya ingin memesan:\n${orders.join('\n')}\n\nTotal: Rp ${total.toLocaleString()}\n\n${rek}\n\nNama: ${userName}\nNomor WhatsApp: ${userWhatsapp}\nAlamat: ${userAddress}`;
     whatsappLink.href = `https://wa.me/628111269691?text=${encodeURIComponent(message)}`;
 }
