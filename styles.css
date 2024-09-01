@@ -1,32 +1,21 @@
+* {
+    box-sizing: border-box; /* Pastikan padding dan border termasuk dalam ukuran elemen */
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .header {
     width: 100%;
     background-color: #ffffff;
     padding: 10px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
     border-radius: 20px; /* Membuat sisi header membulat */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opsional: menambahkan bayangan untuk efek visual */
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    max-width: 50px;
-    margin-right: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan */
 }
 
 .banner-image {
@@ -53,8 +42,8 @@ h2 {
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    row-gap: 50px; /* Jarak antara baris */
-    column-gap: 20px; /* Jarak antara kolom tetap */
+    gap: 20px 10px; /* Mengatur gap antara baris dan kolom */
+    margin-bottom: 20px;
 }
 
 .menu-item {
@@ -67,32 +56,13 @@ h2 {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    margin-bottom: 0px; /* Tidak perlu margin bawah, karena row-gap sudah mengatur jarak antar baris */
-}
-
-.menu-item h3 {
-    margin-bottom: 10px;
-    color: #333;
-    min-height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.menu-image {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    object-fit: cover;
-    flex-grow: 1;
 }
 
 .menu-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 10px;
 }
 
 .price {
@@ -130,7 +100,6 @@ h2 {
     border-radius: 5px;
     margin: 0 5px;
     height: 40px;
-    -moz-appearance: textfield;
 }
 
 .quantity-controls input[type="number"]::-webkit-outer-spin-button,
@@ -141,7 +110,7 @@ h2 {
 
 .total-container {
     text-align: center;
-    margin-top: 40px; /* Menambah margin top agar tidak terlalu dekat dengan grid */
+    margin-top: 40px;
 }
 
 .total-container h2 {
@@ -149,18 +118,15 @@ h2 {
     font-size: 1.5em;
 }
 
-
 #orderList {
-    padding-left: 20px; /* Menambahkan padding kiri agar tidak terlalu menempel */
-    padding-right: 20px; /* (Opsional) Menambahkan padding kanan untuk kesimetrisan */
-    margin-top: 20px; /* Memberikan sedikit ruang di atas */
+    padding: 0 20px; /* Menambahkan padding kiri dan kanan */
+    margin-top: 20px;
 }
 
 #orderList li {
-    list-style-type: none; /* Menghilangkan tanda bullet pada list item */
-    margin-bottom: 10px; /* Menambahkan jarak antar item dalam list */
+    list-style-type: none;
+    margin-bottom: 10px;
 }
-
 
 .whatsapp-button {
     display: inline-block;
@@ -177,7 +143,7 @@ h2 {
 }
 
 .modal {
-    display: none; /* Modal tersembunyi secara default */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -193,18 +159,18 @@ h2 {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    width: 90%; /* Mengatur lebar modal agar responsif */
-    max-width: 400px; /* Membatasi lebar maksimum modal */
+    width: 90%;
+    max-width: 400px;
     text-align: center;
 }
 
 .modal-content input[type="text"] {
-    width: 100%; /* Lebar penuh untuk input */
+    width: 100%;
     padding: 10px;
     margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #ddd;
-    box-sizing: border-box; /* Pastikan padding tidak melebihi lebar */
+    box-sizing: border-box;
 }
 
 .site-footer {
@@ -221,20 +187,20 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px; /* Mengurangi jarak antar elemen */
+    gap: 5px;
 }
 
 .footer-logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5px; /* Mengurangi jarak antara logo dan teks */
+    margin-bottom: 5px;
 }
 
 .footer-logo-icon {
     width: 35px;
     height: 35px;
-    background-color: #4caf50; /* Warna hijau untuk ikon */
+    background-color: #4caf50;
     color: white;
     display: flex;
     justify-content: center;
@@ -246,7 +212,7 @@ h2 {
 
 .footer-content p {
     margin: 0;
-    line-height: 1.4; /* Line-height yang lebih proporsional */
+    line-height: 1.4;
 }
 
 .footer-content a {
@@ -257,6 +223,6 @@ h2 {
 }
 
 .footer-content a:hover {
-    color: #d9534f; /* Warna merah saat hover */
+    color: #d9534f;
     border-bottom: 1px solid #d9534f;
 }
