@@ -82,7 +82,8 @@ function renderMenu(menuItems) {
     });
 }
 
-function changeQuantity(id, price, delta) {
+//function changeQuantity(id, price, delta) {
+window.changeQuantity = function(id, price, delta) {
     var qtyInput = document.getElementById(id);
     var currentValue = parseInt(qtyInput.value);
     if (!isNaN(currentValue)) {
