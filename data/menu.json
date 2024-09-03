@@ -4,35 +4,5 @@
         "name": "Jengkol Rendang / 150 GR",
         "price": 20000,
         "image": "jengkolrendang.png"
-    },
-    {
-        "id": "2",
-        "name": "Babat Serundeng / PC",
-        "price": 5000,
-        "image": "babatserundeng.png"
-    },
-    {
-        "id": "3",
-        "name": "Tamusu Serundeng / PC",
-        "price": 6000,
-        "image": "tamususerundeng.png"
-    },
-    {
-        "id": "4",
-        "name": "Tempe Bacem / PC",
-        "price": 1500,
-        "image": "tempebacem.png"
-    },
-    {
-        "id": "5",
-        "name": "Tahu Bacem / PC",
-        "price": 1500,
-        "image": "tahubacem.png"
-    },
-    {
-        "id": "6",
-        "name": "Kikil Serundeng / PC",
-        "price": 5000,
-        "image": "kikilserundeng.png"
     }
 ]
