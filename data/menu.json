@@ -10,5 +10,11 @@
         "name": "Sate Ayam Sereh / Tusuk",
         "price": 4000,
         "image": "sateayamsereh.jpg"
+    },
+    {
+        "id": "3",
+        "name": "Sambel Matah / 50 gram",
+        "price": 3000,
+        "image": "sambel.jpg"
     }
 ]
