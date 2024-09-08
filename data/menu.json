@@ -1,26 +1,26 @@
 [
     {
         "id": "1",
-        "name": "Semur Jengkol / Porsi",
-        "price": 16000,
-        "image": "semurjengkol.jpg"
+        "name": "Soto Bening / Porsi",
+        "price": 10000,
+        "image": "sotobening.jpg"
     },
     {
         "id": "2",
-        "name": "Sate Ayam Sereh / Tusuk",
-        "price": 4000,
-        "image": "sateayamsereh.jpg"
+        "name": "Telur Puyuh / Tusuk",
+        "price": 6000,
+        "image": "telurpuyuh.jpg"
     },
     {
         "id": "3",
-        "name": "Sambel Matah / 50 gram",
+        "name": "Sate Kikil / Tusuk",
         "price": 3000,
-        "image": "sambel.jpg"
+        "image": "kikil.jpg"
     },
     {
         "id": "4",
-        "name": "Trancam Solo / Porsi",
-        "price": 8000,
-        "image": "trancam.jpg"
+        "name": "Tempe Goreng / Pc",
+        "price": 1000,
+        "image": "tempegoreng.jpg"
     }
 ]
